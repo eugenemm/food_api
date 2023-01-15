@@ -12,45 +12,14 @@ from flask_restplus import Api
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
+from modules.init_flask import create_app
+
 async_mode = 'eventlet'
 
-app = Flask(__name__)
-CORS(app)
-# app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_port=1, x_for=1, x_host=1, x_prefix=1)
-
-app_settings = os.getenv(
-    'API_SETTINGS',
-    'modules.config.Development'
-)
-app.config.from_object(app_settings)
-app.logger.disabled = True
-
+app = create_app()
 
 db_session = db = SQLAlchemy(app, engine_options={'pool_size': 50, 'max_overflow': 10},
                              session_options={"autoflush": False, "autocommit": False})
-
-# local_base = 'postgresql://{user}:{passw}@{host}:{port}/'.format(user=config.db_params['user'],
-#                                                                  passw=config.db_params['passw'],
-#                                                                  host=config.db_params['host'],
-#                                                                  port=config.db_params['port'])
-# data_base_uri = local_base + config.database_name
-# engine = create_engine(data_base_uri)
-# Session = scoped_session(sessionmaker(bind=engine))
-#
-#
-# @contextmanager
-# def session_scope():
-#     """Provide a transactional scope around a series of operations."""
-#     session = Session()
-#     try:
-#         yield session
-#         session.commit()
-#     except Exception as ex:
-#         log.error(ex)
-#         raise
-#     finally:
-#         Session.remove()
-
 
 ma = Marshmallow(app)
 

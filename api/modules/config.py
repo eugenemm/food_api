@@ -15,9 +15,9 @@ rest_url = 'http://127.0.0.1:{}/v1'\
 
 DB_USER = os.getenv('DB_USER')
 DB_PASSWD = os.getenv('DB_PASSWD')
-DB_HOST = os.getenv('DB_HOST')
-DB_PORT = os.getenv('DB_PORT')
-database_name = os.getenv('DB_NAME')
+DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_PORT = os.getenv('DB_PORT', '5432')
+database_name = os.getenv('DB_NAME', "food_db")
 
 
 db_params = dict(user=DB_USER,
