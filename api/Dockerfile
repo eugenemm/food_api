@@ -11,6 +11,7 @@ WORKDIR /var/lib/food_api
 RUN /bin/bash -c 'pip3 install wheel && pip3 install -r ./requirements.txt'
 
 COPY ./ /var/lib/food_api
+COPY ./.env.production /var/lib/food_api/.env
 
 RUN cp -rf ./vendor/* /usr/local
 
