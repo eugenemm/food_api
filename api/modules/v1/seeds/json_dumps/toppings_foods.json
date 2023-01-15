@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "topping_id": 1,
+    "food_id": 1
+  },
+  {
+    "id": 2,
+    "topping_id": 2,
+    "food_id": 1
+  },
+  {
+    "id": 3,
+    "topping_id": 1,
+    "food_id": 2
+  },
+  {
+    "id": 4,
+    "topping_id": 2,
+    "food_id": 3
+  }
+]

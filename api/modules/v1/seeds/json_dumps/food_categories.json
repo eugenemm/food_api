@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Напитки",
+    "is_publish": true
+  },
+  {
+    "id": 2,
+    "name": "Выпечка",
+    "is_publish": true
+  }
+]

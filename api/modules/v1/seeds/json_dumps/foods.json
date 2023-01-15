@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "Смузи (киви+манго)",
+    "description": "смузи 400 мл",
+    "price": 200,
+    "is_special": false,
+    "is_vegan": true,
+    "is_publish": true,
+    "category_id": 1
+  },
+
+  {
+    "id": 2,
+    "name": "Смузи (киви)",
+    "description": "смузи 400 мл",
+    "price": 200,
+    "is_special": false,
+    "is_vegan": true,
+    "is_publish": true,
+    "category_id": 1
+  },
+
+  {
+    "id": 3,
+    "name": "Смузи (манго)",
+    "description": "смузи 400 мл",
+    "price": 200,
+    "is_special": false,
+    "is_vegan": true,
+    "is_publish": true,
+    "category_id": 1
+  },
+  {
+    "id": 4,
+    "name": "Пончик",
+    "description": "пончик 200 гр",
+    "price": 100,
+    "is_special": false,
+    "is_vegan": true,
+    "is_publish": true,
+    "category_id": 2
+  },
+  {
+    "id": 5,
+    "name": "Манго-",
+    "description": "манго-",
+    "price": 100,
+    "is_special": false,
+    "is_vegan": true,
+    "is_publish": false,
+    "category_id": 1
+  }
+]

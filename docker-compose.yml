@@ -1,0 +1,34 @@
+version: "3"
+services:
+  postgres:
+    container_name: food-api-postgres
+    build: ./postgres
+    ports:
+       - "30432:5432"
+    volumes:
+      - ./data:/var/lib/postgres/data
+    networks:
+      food-docker-network:
+        aliases:
+          - food-api-postgres
+  food-api:
+     container_name: food-api
+     build: ./api
+     depends_on:
+       - postgres
+     links:
+      - postgres
+     ports:
+       - "49105:49105"
+     expose:
+       - 49105
+     environment:
+       DB_HOST: food-api-postgres
+       DB_PORT: 5432
+     networks:
+       food-docker-network:
+         aliases:
+           - food_api
+
+networks:
+  food-docker-network:
